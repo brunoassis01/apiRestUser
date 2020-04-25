@@ -1,6 +1,5 @@
 package com.springjpa.userest.entity;
 
-
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,7 +22,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Getter private Long id;
+	 private Long id;
 	
 	@Getter @Setter private String name;
 	
