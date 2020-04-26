@@ -26,11 +26,7 @@ public class dataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 			this.createUser("Gracie2", "Gracie2@email.com");
 		}
 		
-//		this.getSecondUser();
-//		this.deleteById(1L);
-		
-		User user = this.findByEmail("bruno@email.com");
-		System.out.println(user.getName());
+		this.findByName("Bruno");
 	}
 
 	private void createUser(String name, String email) {
@@ -38,18 +34,10 @@ public class dataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 
 		this.userRepository.save(user);
 	}
-
-	private void getSecondUser() {
-		User user = this.userRepository.getOne(2L);
-		System.out.println(user.getName());
-	}
-
-	private void deleteById(Long id) {
-		this.userRepository.getOne(id);
-	}
 	
-	private User findByEmail(String email) {
-		return this.userRepository.findBySomeEmail(email);
+	private void findByName(String name) {
+		User user = this.userRepository.findByName(name);
+		System.out.println(user.getName());
 	}
 
 }
